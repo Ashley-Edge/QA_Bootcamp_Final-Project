@@ -3,7 +3,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Clone into repo
-https://github.com/Team-CodeVid/spring-petclinic-rest
+git clone https://github.com/Team-CodeVid/spring-petclinic-rest
 
 #Enter directory
 cd spring-petclinic-rest
