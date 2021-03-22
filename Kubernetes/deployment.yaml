@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: petclinic-demo
+  name: petclinic-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: petclinic-demo
+    spec:
+      containers:
+      - image: springcommunity/spring-petclinic-rest
+        name: petclinic-demo
+        resources: {}
+        ports:
+          - containerPort: 27017
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic-demo-service
+spec:
+  selector:
+    app: petclinic-demo
+  ports:
+    - protocol: TCP
+      port: 9966
+      targetPort: 9966   
