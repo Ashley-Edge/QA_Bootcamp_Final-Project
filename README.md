@@ -61,11 +61,10 @@ We will need to plan, design, implement a solution for automating the developmen
 ***
 ## **Planning**
 
-Planning is a large part of this project. We will be spending a large amount of time planning, researching and choosing the technologies we will be using to deploy this app. The first part of our week long project we spent planning and researching the technologies how we wanted to complete this project. We will be using this [Trello](https://trello.com/b/RNcvphoe/codevid-final-project) board to create a todo list, doing list and done list. This will help us assign jobs and keep everyone informed on what needs to be done, and what each member is up to. All week we will have run morning stand-ups. In these stand-ups we will discuse any issues or ideas we have had since our last meeting. We will update the Trello board above to reflect any new tasks we will impliment, update how far each tasks has progressed and assign new tasks to members when needed. We are also taking part in afternoon mini meetings to touch base with each other and to make sure everyone is on the same thought process(no one will be left behind!)
+Planning is a large part of this project. We will be spending a large amount of time planning, researching and choosing the technologies we will be using to deploy this app. In the first part of this week-long project we spent planning and researching the technologies how we wanted to complete this project. We will be using this [Trello](https://trello.com/b/RNcvphoe/codevid-final-project) board to create a todo list, doing list and done list. This will help us assign jobs and keep everyone informed on what needs to be done, and what each member is up to. All week we will have run morning stand-ups. In these stand-ups, we will discuss any issues or ideas we have had since our last meeting. We will update the Trello board above to reflect any new tasks we will implement, update how far each task has progressed and assign new tasks to members when needed. We are also taking part in afternoon mini-meetings to touch base with each other and to make sure everyone is on the same thought process(no one will be left behind!)
 
 This is our initial Trello board after our first day in the project. As you can see we have created quite a few tasks to do and have assigned them to members through tags.
 ![Initial Trello Board](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/aa78bcb586afb161fdf2ae47b8ea3a82/Initial_Trello_Board.png)
-
 
 
 ***
