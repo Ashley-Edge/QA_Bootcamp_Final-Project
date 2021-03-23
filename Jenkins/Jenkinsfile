@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    environment {
+        AWS_ACCESS_KEY_ID = //need to add
+        AWS_SECRET_ACCESS_KEY = //need to add
+        DOCKER_USERNAME = //need to add
+        DOCKER_PASSWORD = //need to add
+        DOCKER_EMAIL = //need to add
+    }
+
+    stages {
+
+        /* Begin Template
+        stage('template'){
+            steps{
+                sh 'scripts'
+            }
+        }
+        End template*/
+
+        stage('Setting up database'){
+            steps{
+                sh 'scripts' //need script written
+            }
+        }
+
+        stage('Testing'){
+            steps{
+                sh 'Jenkins/test_app.sh'
+            }
+        }
+
+        stage('Build images'){
+            steps{
+
+                sh 'Jenkins/Scripts/Docker/install-docker.sh'
+            }
+        }
+        stage('Deploy images to the Kubernetes cluster'){
+            steps{
+                sh 'scripts'
+            }
+        }
+    }
+}
