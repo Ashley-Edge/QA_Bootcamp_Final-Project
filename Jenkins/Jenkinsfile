@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Deploy images to the Kubernetes cluster'){
             steps{
-                sh 'scripts'
+                sh 'scripts' //need script written
             }
         }
     }
