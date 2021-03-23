@@ -16,14 +16,12 @@ We will need to plan, design, implement a solution for automating the developmen
 
 1. **Management:**
     - Daily Sprints —> stand-ups and Trello Board
-    - Decide what tools you will use for what purpose 
-    - design a CI/CD pipeline with the chosen tools
-    - consider how the price will affect the CI/CD pipeline —> running costs
-    - Will it have multiple environment support
-    - How will you integrate webhooks to work with GitHub?
-    - How will you implement testing?
-    - Decide on Cloud provider and software to be used
-    - Sprint Retrospective
+    - Decide what tools to use for what purpose 
+    - Design a CI/CD pipeline with the chosen tools
+    - Consider how the price will affect the CI/CD pipeline —> running costs
+    - Will it have multiple environment support?
+    - How will we integrate webhooks to work with GitHub?
+    - How will we implement testing?
 2. **Code:**
     - Use the tools practised; Terraform, Ansible, Kubernetes...etc
     - Deploy Kubernetes Cluster in Cloud, using Terraform
@@ -31,7 +29,7 @@ We will need to plan, design, implement a solution for automating the developmen
     - Use configuration software to automate containerisation and deployment
     - Use Deployment software to develop a CI/CD pipeline including built, test and deploy stages
     - Use a Cloud provider
-3. **Documentation:**
+<!-- 3. **Documentation:**
     - Specification for the project
     - Project Planning and Initial Management
     - Risk Assessment
@@ -45,7 +43,7 @@ We will need to plan, design, implement a solution for automating the developmen
     - Explanation for each CI/CD component
     - Explanation for choices and price for real deployment in the field
     - Sprint Retrospective and Project management
-    - Additional Info
+    - Additional Info -->
 
 ***
 ## **Contents**
@@ -63,9 +61,11 @@ We will need to plan, design, implement a solution for automating the developmen
 ***
 ## **Planning**
 
-Planning is a large part of this project. We will be spending a large amount of time planning, researching and choosing the technologies we will be using to deploy this app.
+Planning is a large part of this project. We will be spending a large amount of time planning, researching and choosing the technologies we will be using to deploy this app. In the first part of this week-long project we spent planning and researching the technologies how we wanted to complete this project. We will be using this [Trello](https://trello.com/b/RNcvphoe/codevid-final-project) board to create a todo list, doing list and done list. This will help us assign jobs and keep everyone informed on what needs to be done, and what each member is up to. All week we will have run morning stand-ups. In these stand-ups, we will discuss any issues or ideas we have had since our last meeting. We will update the Trello board above to reflect any new tasks we will implement, update how far each task has progressed and assign new tasks to members when needed. We are also taking part in afternoon mini-meetings to touch base with each other and to make sure everyone is on the same thought process(no one will be left behind!)
 
-We will be using this [Trello](https://trello.com/b/RNcvphoe/codevid-final-project) board to create a todo list, doing list and done list. This will help us assign jobs and keep everyone informed on what needs to be done, and what each member is up to.
+This is our initial Trello board after our first day in the project. As you can see we have created quite a few tasks to do and have assigned them to members through tags.
+![Initial Trello Board](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/aa78bcb586afb161fdf2ae47b8ea3a82/Initial_Trello_Board.png)
+
 
 ***
 ## **Risk assessment**
