@@ -1,54 +1,17 @@
-provider "kubernetes" {
-  host                   = ""
-  cluster_ca_certificate = ""
-  token                  = ""
-  load_config_file       = false
+module "eks" {
+  source  = "terraform-aws-modules/eks/aws"
+  version = "14.0.0"
+  cluster_name = "project3-cluster"
+  cluster_version = "1.17"
+  vpc_id = var.vpc_id
+  subnets = [var.subnet1_id, var.subnet2_id]
+  #manage_cluster_iam_resources = false
+  #cluster_iam_role_name = EKSCluster
+
+worker_groups = [
+    {
+        instance_type = "t2.small"
+        asg_max_size = 2
+    }
+]
 }
-
-resource "aws_security_group" "worker_group_mgmt_one" {
-  name_prefix = "worker_group_mgmt_one"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "10.0.0.0/8",
-    ]
-  }
-}
-
-resource "aws_security_group" "worker_group_mgmt_two" {
-  name_prefix = "worker_group_mgmt_two"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "192.168.0.0/16",
-    ]
-  }
-}
-
-resource "aws_security_group" "all_worker_mgmt" {
-  name_prefix = "all_worker_management"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "10.0.0.0/8",
-      "172.16.0.0/12",
-      "192.168.0.0/16",
-    ]
-  }
-}
-
