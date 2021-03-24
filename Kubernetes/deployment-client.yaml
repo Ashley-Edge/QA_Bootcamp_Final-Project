@@ -18,7 +18,7 @@ spec:
         app: petclinic-demo-angular
     spec:
       containers:
-      - image: stegojulia/petclinicangular
+      - image: codevid/frontend
         name: petclinic-demo-angular
         resources: {}
 status: {}

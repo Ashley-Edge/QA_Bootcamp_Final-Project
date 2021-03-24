@@ -18,7 +18,7 @@ spec:
         app: petclinic-demo
     spec:
       containers:
-      - image: springcommunity/spring-petclinic-rest
+      - image: codevid/backend
         name: petclinic-demo
         resources: {}
         ports:
