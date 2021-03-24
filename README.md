@@ -128,7 +128,7 @@ We want to keep costs down to a minimum for this project, while still delivering
 ***
 ## **Team Members**
 
-- [Derand Demaji](https://github.com/DerandStudent)
+- [Derand Demaj](https://github.com/DerandStudent)
 - [Ashley Edge](https://github.com/Ashley-Edge)
 - [Mohammed Hallaq](https://github.com/mhallaq)
 - [Julia Jablonska](https://github.com/stegojulia)

@@ -1,1 +1,0 @@
-variable "net_id" {}
