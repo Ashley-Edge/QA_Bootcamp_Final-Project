@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install dependencies required to build
-sudo apt install openjdk-8-jre maven default-jre
+sudo apt install openjdk-8-jre maven default-jre -y
 
 #Go into our Docker directory
 cd Docker
@@ -31,6 +31,3 @@ sudo docker-compose push
 # Remove the app git repos to save space.
 sudo rm -r spring-petclinic-rest
 sudo rm -r spring-petclinic-angular
-
-
-
