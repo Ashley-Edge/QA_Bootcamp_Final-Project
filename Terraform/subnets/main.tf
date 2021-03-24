@@ -16,6 +16,22 @@ resource "aws_subnet" "subnet-2" {
   }
 }
 
+resource "aws_security_group" "worker_group" {
+  name_prefix = "worker_group"
+  vpc_id = var.vpc_id
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+
+    cidr_blocks = [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+
 #resource "aws_route_table_association" "a" {
 #  subnet_id      = aws_subnet.subnet-1.id
 #  route_table_id = var.route_id

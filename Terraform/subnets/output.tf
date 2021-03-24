@@ -12,3 +12,9 @@ output "subnet1_id" {
 output "subnet2_id" {
   value = aws_subnet.subnet-2.id
 }
+
+
+
+output "security_group_id" {
+  value = aws_security_group.worker_group.id
+}

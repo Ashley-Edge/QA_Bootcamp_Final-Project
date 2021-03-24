@@ -4,7 +4,6 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-
 module "subnets" {
   source        = "./subnets"
   vpc_id        = module.vpc.vpc_id
@@ -18,9 +17,9 @@ module "vpc" {
   secret_key = var.secret_key
 }
 
-module "iam" {
-  source = "./iam"
-}
+#module "iam" {
+ # source = "./iam"
+#}
 
 #module "rds" {
  # source = "./rds"
@@ -31,5 +30,8 @@ module "eks" {
   vpc_id = module.vpc.vpc_id
   subnet1_id = module.subnets.subnet1_id
   subnet2_id = module.subnets.subnet2_id
-}
+  security_group_id = module.subnets.security_group_id
+    
+  }
+
 
