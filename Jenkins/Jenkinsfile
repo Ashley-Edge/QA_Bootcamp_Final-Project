@@ -29,6 +29,7 @@ pipeline {
                 sh 'bash ./Jenkins/Scripts/Docker/build_images.sh'
             }
         }
+        }
         stage('Deploy images'){
         steps{
             withCredentials([string(credentialsId: 'SECRET_ACCESS_KEY', variable: 'SECRET_ACCESS_KEY'), string(credentialsId: 'ACCESS_KEY_ID', variable: 'ACCESS_KEY_ID')]) {
@@ -36,7 +37,6 @@ pipeline {
                 sh 'bash ./Jenkins/Scripts/Kubernetes/deploy_pods.sh'
             }
         }
-    }
-}
+        }
     }
 }
