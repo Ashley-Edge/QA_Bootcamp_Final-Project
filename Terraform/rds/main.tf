@@ -1,7 +1,7 @@
 # Create a rds MySQL 5.7 instance
 
 resource "aws_db_instance" "rds_instance" {
-  name = "database"
+  name = "ourdatabase"
 
   engine         = "mysql"
   engine_version = "5.7"
@@ -10,7 +10,7 @@ resource "aws_db_instance" "rds_instance" {
   publicly_accessible = true
 
   username = "root"
-  password = var.db_root_password #needs to be set still
+  password = "BingBangBong"
 
 # for auto scalling
   allocated_storage = 10
