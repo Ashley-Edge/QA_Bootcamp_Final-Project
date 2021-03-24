@@ -12,21 +12,21 @@ pipeline {
 
         stage('Setting up database'){
             steps{
-                sh 'Jenkins/Scripts/Database/database.sh'
+                sh 'bash ./Jenkins/Scripts/Database/database.sh'
             }
         }
 
         stage('Testing'){
             steps{
-                sh 'Jenkins/Scripts/Test/test_app.sh'
+                sh 'bash ./Jenkins/Scripts/Test/test_app.sh'
             }
         }
 
         stage('Build images'){
         steps{
              withCredentials([string(credentialsId: 'DOCKER_USERNAME', variable: 'DOCKER_USERNAME'), string(credentialsId: 'DOCKER_PASSWORD', variable: 'DOCKER_PASSWORD')]) {
-                sh 'Jenkins/Scripts/Docker/install-docker.sh'
-                sh 'Jenkins/Scripts/Docker/build_images.sh'
+                sh 'bash ./Jenkins/Scripts/Docker/install-docker.sh'
+                sh 'bash ./Jenkins/Scripts/Docker/build_images.sh'
             }
         }
         }
