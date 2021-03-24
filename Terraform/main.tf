@@ -60,9 +60,9 @@ module "eks" {
 
   node_groups = {
     first = {
-      desired_capacity = 4
-      min_size     = 3
-      max_size = 4
+      desired_capacity = 3
+      min_size     = 2
+      max_size = 3
 
       instance_type = "t2.small"
     }
