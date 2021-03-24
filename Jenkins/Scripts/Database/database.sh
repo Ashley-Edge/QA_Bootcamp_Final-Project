@@ -16,9 +16,9 @@ cp spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql .
 cp spring-petclinic-rest/src/main/resources/db/mysql/populateDB.sql .
 
 #Run our files on the mysql-client, create and populate the petclinic database
-mysql --host=#ENTER RDS IP/ENDPOINT HERE# --port=3306 --user=root --password=#ENTER RDS PASSWORD HERE# < initDB.sql
+mysql --host=34.105.104.212 --port=3306 --user=root --password= < initDB.sql
 
-mysql --host=#ENTER RDS IP/ENDPOINT HERE# --port=3306 --user=root --password=#ENTER RDS PASSWORD HERE# petclinic < populateDB.sql
+mysql --host=34.105.104.212 --port=3306 --user=root --password= petclinic < populateDB.sql
 
 #Clean up (ideal for testing environment)
 cd .. && sudo rm -r temp_dir

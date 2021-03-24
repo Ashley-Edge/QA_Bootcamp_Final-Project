@@ -32,6 +32,7 @@ pipeline {
     // 
         steps{
                 sh 'Jenkins/Scripts/Docker/install-docker.sh'
+                sh 'Jenkins/Scripts/Docker/build_images.sh'
             }
         }
         stage('Deploy images to the Kubernetes cluster'){
