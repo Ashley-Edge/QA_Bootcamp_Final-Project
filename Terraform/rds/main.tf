@@ -16,6 +16,6 @@ resource "aws_db_instance" "rds_instance" {
   allocated_storage = 10
   max_allocated_storage = 50
 
- # So we can delete our RDS instance with Terraform.
+ # If needed, we can delete our RDS instance with Terraform.
   skip_final_snapshot = true 
 }
