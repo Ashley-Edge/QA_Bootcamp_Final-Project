@@ -7,3 +7,6 @@ kubectl apply -f Kubernetes/deployment.yaml
 
 # Runs our front end Angular file.
 kubectl apply -f Kubernetes/deployment-client.yaml
+
+# Runs our loadBalancer service
+kubectl apply -f Kubernetes/loadbalancer.yaml
