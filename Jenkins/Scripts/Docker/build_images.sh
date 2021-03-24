@@ -23,7 +23,7 @@ git clone https://github.com/Team-CodeVid/spring-petclinic-angular
 docker-compose build --no-cache
 
 #Log in to our dockerhub account
-sudo docker login docker.io -u #Our_Username# -p #Our_Password#
+sudo docker login docker.io -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 # Push the images to docker
 sudo docker-compose push
