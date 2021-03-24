@@ -3,9 +3,6 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = //need to add
         AWS_SECRET_ACCESS_KEY = //need to add
-        DOCKER_USERNAME = //need to add
-        DOCKER_PASSWORD = //need to add
-        DOCKER_EMAIL = //need to add
     }
 
     stages {
@@ -31,8 +28,9 @@ pipeline {
         }
 
         stage('Build images'){
-            steps{
-
+            withCredentials([string(credentialsId: 'DOCKER_USERNAME', variable: 'DOCKER_USERNAME'), string(credentialsId: 'DOCKER_PASSWORD', variable: 'DOCKER_PASSWORD')]) {
+    // 
+        steps{
                 sh 'Jenkins/Scripts/Docker/install-docker.sh'
             }
         }
