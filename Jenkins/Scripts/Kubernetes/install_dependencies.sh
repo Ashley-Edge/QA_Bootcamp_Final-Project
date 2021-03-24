@@ -13,7 +13,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 
 #Configure AWS
-aws configure set aws_access_key_id $ACCESS_KEY
+aws configure set aws_access_key_id $ACCESS_KEY_ID
 aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
 
 #Configure kubeconfig
