@@ -4,6 +4,9 @@ sudo apt install mysql-client
 #Check to see if installed
 mysql -V
 
+#Remove existing temp_dir
+rm -rf temp_dir
+
 #Create a temporary directory and go inside it (ideal for testing environment)
 mkdir temp_dir && cd temp_dir
 
