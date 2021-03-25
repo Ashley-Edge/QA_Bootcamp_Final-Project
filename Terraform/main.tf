@@ -154,4 +154,6 @@ module "alb" {
 
 module "rds" {
   source = "./rds"
+  vpc_id        = module.rds.dbuser
+  route_id      = module.rds.dbpassword
 }
