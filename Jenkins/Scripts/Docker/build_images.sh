@@ -11,7 +11,7 @@ docker system prune -f
 
 #Remove any previous repos
 sudo rm -r spring-petclinic-angular
-sudo rm -r spring petclinic-rest
+sudo rm -r spring-petclinic-rest
 
 #Clone our REST repo (contains our Dockerfile already)
 git clone https://github.com/Team-CodeVid/spring-petclinic-rest

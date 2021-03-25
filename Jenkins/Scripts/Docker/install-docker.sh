@@ -11,6 +11,7 @@ curl https://get.docker.com | sudo bash
 sudo groupadd docker
 
 sudo usermod -aG docker $(whoami)
+sudo service jenkins restart
 
 # Install jq & curl
 
