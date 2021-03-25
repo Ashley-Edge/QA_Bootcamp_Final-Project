@@ -5,6 +5,6 @@ export HOST_ID2
 LOAD_BALANCER=`kubectl describe svc --namespace=default | grep -o 'LoadBalancer Ingress:.*' | cut -f2- -d: | sed 's/^ *//g'`
 #echo $LOAD_BALANCER
 export LOAD_BALANCER
-cat update.json | envsubst >update2.json
-cat update2.json
+cat ./Jenkins/Scripts/Kubernetes/update.json | envsubst >./Jenkins/Scripts/Kubernetes/update2.json
+cat ./Jenkins/Scripts/Kubernetes/update2.json
 aws route53 change-resource-record-sets --hosted-zone-id $HOST_ID1 --change-batch file://./update2.json
