@@ -154,6 +154,6 @@ module "alb" {
 
 module "rds" {
   source = "./rds"
-  username        = module.rds.dbuser
-  password      = module.rds.dbpassword
+  dbuser        = module.rds.dbuser
+  dbpassword      = module.rds.dbpassword
 }
