@@ -151,3 +151,7 @@ module "alb" {
     Environment = "Production"
   }
 }
+
+module "rds" {
+  source = "./rds"
+}
