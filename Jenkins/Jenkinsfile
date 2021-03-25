@@ -28,6 +28,7 @@ pipeline {
             withCredentials([string(credentialsId: 'SECRET_ACCESS_KEY', variable: 'SECRET_ACCESS_KEY'), string(credentialsId: 'ACCESS_KEY_ID', variable: 'ACCESS_KEY_ID')]) {
                 sh 'bash ./Jenkins/Scripts/Kubernetes/install_dependencies.sh'
                 sh 'bash ./Jenkins/Scripts/Kubernetes/deploy_pods.sh'
+                sh 'bash ./Jenkins/Scripts/Kubernetes/reroute_dns.sh'
             }
         }
         }
