@@ -1,17 +1,9 @@
 pipeline {
     agent any
     stages {
-
-        /* Begin Template
-        stage('template'){
-            steps{
-                sh 'scripts'
-            }
-        }
-        End template*/
-
         stage('Setting up database'){
             steps{
+            withCredentials([string(credentialsId: 'RDS_ENDPOINT', variable: 'RDS_ENDPOINT'), string(credentialsId: 'RDS_USERNAME', variable: 'RDS_USERNAME'), string(credentialsId: 'RDS_PASSWORD', variable: 'RDS_PASSWORD')]) {
                 sh 'bash ./Jenkins/Scripts/Database/database.sh'
             }
         }
