@@ -1,4 +1,8 @@
-variable "password" {
-    description = "MySQL password"
-    default     = " " # need to add
+variable "dbuser" {
+    type = string
+    sensitive = true
+}
+variable "dbpassword" {
+    type = string
+    sensitive = true
 }

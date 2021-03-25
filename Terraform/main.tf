@@ -151,3 +151,9 @@ module "alb" {
     Environment = "Production"
   }
 }
+
+module "rds" {
+  source = "./rds"
+  dbuser        = var.dbuser
+  dbpassword      = var.dbpassword
+}
