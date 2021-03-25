@@ -1,8 +1,11 @@
 #Install mysql client package
-sudo apt install mysql-client
+sudo apt install mysql-client -y
 
 #Check to see if installed
 mysql -V
+
+#Remove existing temp_dir
+rm -rf temp_dir
 
 #Create a temporary directory and go inside it (ideal for testing environment)
 mkdir temp_dir && cd temp_dir
@@ -16,9 +19,9 @@ cp spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql .
 cp spring-petclinic-rest/src/main/resources/db/mysql/populateDB.sql .
 
 #Run our files on the mysql-client, create and populate the petclinic database
-mysql --host=#ENTER RDS IP/ENDPOINT HERE# --port=3306 --user=root --password=#ENTER RDS PASSWORD HERE# < initDB.sql
+mysql --host=$RDS_ENDPOINT --port=3306 --user=$RDS_USERNAME --password=$RDS_PASSWORD < initDB.sql
 
-mysql --host=#ENTER RDS IP/ENDPOINT HERE# --port=3306 --user=root --password=#ENTER RDS PASSWORD HERE# petclinic < populateDB.sql
+mysql --host=$RDS_ENDPOINT --port=3306 --user=$RDS_USERNAME --password=$RDS_PASSWORD petclinic < populateDB.sql
 
 #Clean up (ideal for testing environment)
 cd .. && sudo rm -r temp_dir

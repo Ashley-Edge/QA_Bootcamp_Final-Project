@@ -9,8 +9,8 @@ resource "aws_db_instance" "rds_instance" {
 
   publicly_accessible = true
 
-  username = "root"
-  password = "BingBangBong"
+  username = var.dbuser
+  password = var.dbpassword
 
 # for auto scalling
   allocated_storage = 10
@@ -18,4 +18,8 @@ resource "aws_db_instance" "rds_instance" {
 
  # If needed, we can delete our RDS instance with Terraform.
   skip_final_snapshot = true 
+
+  tags = {
+    n = "foo"
+  }
 }

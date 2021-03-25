@@ -18,9 +18,10 @@ spec:
         app: petclinic-demo-angular
     spec:
       containers:
-      - image: stegojulia/petclinicangular
+      - image: codevid/frontend
         name: petclinic-demo-angular
         resources: {}
+        imagePullPolicy: Always
 status: {}
 ---
 apiVersion: v1

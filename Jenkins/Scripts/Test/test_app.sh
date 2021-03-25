@@ -2,6 +2,9 @@
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
+#Remove existing repo
+sudo rm -r spring-petclinic-rest
+
 #Clone into repo
 git clone https://github.com/Team-CodeVid/spring-petclinic-rest
 
