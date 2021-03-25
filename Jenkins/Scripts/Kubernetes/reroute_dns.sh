@@ -7,4 +7,4 @@ LOAD_BALANCER=`kubectl describe svc --namespace=default | grep -o 'LoadBalancer 
 export LOAD_BALANCER
 cat ./Jenkins/Scripts/Kubernetes/update.json | envsubst >./Jenkins/Scripts/Kubernetes/update2.json
 cat ./Jenkins/Scripts/Kubernetes/update2.json
-aws route53 change-resource-record-sets --hosted-zone-id $HOST_ID1 --change-batch file://./update2.json
+aws route53 change-resource-record-sets --hosted-zone-id $HOST_ID1 --change-batch file://./Jenkins/Scripts/Kubernetes/update2.json
