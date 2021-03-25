@@ -21,6 +21,7 @@ spec:
       - image: codevid/frontend
         name: petclinic-demo-angular
         resources: {}
+        imagePullPolicy: Always
 status: {}
 ---
 apiVersion: v1
