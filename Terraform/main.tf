@@ -48,6 +48,21 @@ module "vpc" {
   }
 }
 
+resource "aws_vpc_peering_connection" "foo" {
+  peer_vpc_id   = "vpc-2544624d"
+  vpc_id        = module.vpc.vpc_id
+  auto_accept = true
+
+  accepter {
+    allow_remote_vpc_dns_resolution = true
+  }
+
+  requester {
+    allow_remote_vpc_dns_resolution = true
+  }
+}
+
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "12.2.0"
