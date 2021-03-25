@@ -10,7 +10,7 @@ curl https://get.docker.com | sudo bash
 
 sudo groupadd docker
 sudo usermod -aG docker $(whoami)
-chmod 777 /var/run/docker.sock
+sudo chmod 777 /var/run/docker.sock
 
 # Install jq & curl
 
