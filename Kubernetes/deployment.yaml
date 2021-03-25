@@ -20,10 +20,18 @@ spec:
       containers:
       - image: codevid/backend
         name: petclinic-demo
+        imagePullPolicy: Always
         resources: {}
         ports:
           - containerPort: 9966
-        imagePullPolicy: Always
+        env:
+        - name: RDS_ENDPOINT
+          value: $RDS_ENDPOINT
+        - name: RDS_USERNAME
+          value: $RDS_USERNAME
+        - name: RDS_PASSWORD
+          value: $RDS_PASSWORD
+      
 status: {}
 ---
 apiVersion: v1
