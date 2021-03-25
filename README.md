@@ -50,11 +50,9 @@ We will need to plan, design, implement a solution for automating the developmen
 * [Planning](#Planning)
 * [Risk assessment](#Risk_assessment)
 * [CI Pipeline](#CI_Pipeline)
-* [Terraform](#Terraform)
-* [Kubernetes](#Kubernetes)
+* [Terraform and Kubernetes](#Terraform_and_Kubernetes)
 * [Jenkins](#Jenkins)
 * [Docker](#Docker)
-* [Ansible](#Ansible)
 * [Costs](#Costs)
 * [Team Members](#Team_Members)
 
@@ -84,7 +82,7 @@ Below is our initial CI/CD Pipeline, which we decided on at the beginning of the
 While we were learning about Kubernetes and how to use it, we discovered that it can take up to 20 to initially start up a cluster. Below is our plan to cut down that time. Part 1 will be initialised once and part 2 will run through Jenkins via a GitHub webhook. We will talk more about each stage in depth further on in this document.
 
 Part 1 Terraform
-1. Set up IAM roles and policies
+1. Set up IAM roles and policies (will do than on your AWS account directly)
 2. Set up networking
 3. Set up Kubernetes cluster
 4. Set up RDS
@@ -97,28 +95,40 @@ Part 2 Jenkins Pull code from GitHub
 5. Rejoice :smile:
 
 ***
-## **Terraform**
- We will be using Terraform to Set up IAM roles and policies, set up networking, set up our Kubernetes cluster and set up RDS.
+## **Terraform and Kubernetes**
+ We will be using Terraform to set up networking, our Kubernetes cluster and our RDS database. This will only need to be done once. Once `terraform apply` had been executed and the cluster has successfully built with through kubernetes, all other updates can be handles by a Jenking/GitHub webhook.
 
-***
-## **Kubernetes**
+First we created an IAM user that we will give policies and permissions to run our kubernetes.
+![IAM Users](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d32ec05c8a2623ce33ad029c56390e31/IAM_Users.png)
 
-We will use Kubernetes to set up our cluster.
+Below you will find all the policies and permissiions we granted to our kubernetes user.
+![IAM Policies](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d589c035a5ec44d036130527b41387ed/IAM_Policies_permissions.png)
+
+This user's credentials will enable us to automate everything in out terraform and kubernetes files and folders. All credentials and sensative information (secret keys, passwords etc)will be protected and hidden with variables.tf files.
+
+With terraform we set up networking.
+![VPC](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/17e2ac118da3bfe3f7b062a04cad6d0c/VPC.png)
+
+And our Kubernetes Cluster.
+![Cluster](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/1c03d6de132cb5f6d160b282ac763add/Clusters.png)
+Our cluster is made up of four EC2 instances.
+![EC2's]()
 
 ***
 ## **Jenkins**
 
 We will use Jenkins to build our CI/CD pipeline, by pulling the code from this GitHub Repo. We will then run the test code, build our images with Docker, and Deploy the Docker images to the Kubernetes cluster.
 
+As you can see below, we had a successfully deployed our app after 11 builds. And looking further with the Jenkins console output, you can see we are issue also free.
+
+![Jenkins pipeline and console](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/5c859459a33274a19817dc201aae5e4b/Jenkins.png)
+
+We have five stages in our Jenkins pipeline
+
 ***
 ## **Docker**
 
 Docker to containerise the application.
-
-***
-## **Ansible**
-
-Use Ansible to build images and push them to Dockerhub.
 
 ***
 ## **Costs**
