@@ -9,10 +9,8 @@ curl https://get.docker.com | sudo bash
 # Add the current user docker users
 
 sudo groupadd docker
-
 sudo usermod -aG docker $(whoami)
-sudo service jenkins restart
-
+chmod 777 /var/run/docker.sock
 # Install jq & curl
 
 sudo apt update
