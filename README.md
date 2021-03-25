@@ -53,13 +53,13 @@ We will need to plan, design, implement a solution for automating the developmen
 ***
 ## **Contents**
 * [Planning](#Planning)
-* [Risk assessment](#Risk_assessment)
-* [CI Pipeline](#CI_Pipeline)
-* [Terraform and Kubernetes](#Terraform_and_Kubernetes)
+* [Risk assessment](#Risk-assessment)
+* [CI/CD Pipeline](#CI/CD-Pipeline)
+* [Terraform and Kubernetes](#Terraform-and-Kubernetes)
 * [Jenkins](#Jenkins)
 * [Docker](#Docker)
 * [Costs](#Costs)
-* [Team Members](#Team_Members)
+* [Team Members](#Team-Members)
 
 ***
 ## **Planning**
