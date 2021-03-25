@@ -1,5 +1,5 @@
 #Install mysql client package
-sudo apt install mysql-client
+sudo apt install mysql-client -y
 
 #Check to see if installed
 mysql -V
