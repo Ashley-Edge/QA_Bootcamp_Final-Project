@@ -118,14 +118,14 @@ And our Kubernetes Cluster.
 Our cluster is made up of four EC2 instances.
 ![EC2's](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d726491d9c29ad5fb72d20d27938981b/Instances.png)
 Finally, our RDS Database is created.
-![RDS](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/59fb20b0718d1a45d8d79ba066b72c1d/RDS_Database.png
+![RDS](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/59fb20b0718d1a45d8d79ba066b72c1d/RDS_Database.png)
 
 ***
 ## **Jenkins**
 
 We will use Jenkins to build our CI/CD pipeline, by pulling the code from this GitHub Repo. We will then run the test code, build our images with Docker, and Deploy the Docker images to the Kubernetes cluster.
 
-As you can see below, we had a successfully deployed our app after 11 builds. And looking further with the Jenkins console output, you can see we are issue also free.
+As you can see below, we had successfully deployed our app after 11 builds. And looking further with the Jenkins console output, you can see we are an issue also free.
 
 ![Jenkins pipeline and console](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/5c859459a33274a19817dc201aae5e4b/Jenkins.png)
 
