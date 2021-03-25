@@ -57,7 +57,6 @@ We will need to plan, design, implement a solution for automating the developmen
 * [CI/CD Pipeline](#CI/CD-Pipeline)
 * [Terraform and Kubernetes](#Terraform-and-Kubernetes)
 * [Jenkins](#Jenkins)
-* [Docker](#Docker)
 * [Costs](#Costs)
 * [Team Members](#Team-Members)
 
@@ -147,11 +146,6 @@ We have five stages in our Jenkins pipeline: Checkout SCM, Setting up the databa
 **Build images** - Again we utilised credentials to give Jenkins access to our DockerHub account. The first script is run which installed Docker programmes needed. The Second script instructs Jenkins to build all our images and push them to DockerHub.
 
 **Deploy images** - Will use supplied credentials to run two scripts that install dependencies and deploy the pods. The install dependencies script installs awscli and kubeclt, then configures both AWS and kubeconfig. Finally, Our Deploy script is run which runs our back end REST API, our front end Angular file and our load balancer service.
-
-***
-## **Docker**
-
-Docker to containerise the application.
 
 ***
 ## **Costs**
