@@ -9,8 +9,8 @@ resource "aws_db_instance" "rds_instance" {
 
   publicly_accessible = true
 
-  username = "root"
-  password = "BingBangBong"
+  username = var.dbuser
+  password = var.dbpassword
 
 # for auto scalling
   allocated_storage = 10
