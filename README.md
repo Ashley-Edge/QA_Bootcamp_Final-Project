@@ -14,7 +14,12 @@ They are well-documented applications for the ‘Spring Pet Clinic’ domain, on
 
 We will need to plan, design, implement a solution for automating the development of workflows and deployments of this application. As part of our final deliverable, we are required to discuss the project in a presentation and demonstrate these workflows on Friday. Using what we have learned during the past 11 weeks we will consider the following:
 
-1. **Management:**
+- **What tools will work for you best?** For example: Terraform, Kubernetes, Ansible etc. There is no restrictions or requirements on which ones to use; you should decide which you feel are most appropriate and justify their use.
+- **Multiple Environment support:** How can a developer test their new features on an environment before merging their changes to the main branch?
+- **How can changes on the GitHub repository automatically build and deploy** to testing and live environments?
+- **Running costs.** What are your monthly estimates? How could they be improved?
+
+<!-- 1. **Management:**
     - Daily Sprints —> stand-ups and Trello Board
     - Decide what tools to use for what purpose 
     - Design a CI/CD pipeline with the chosen tools
@@ -29,7 +34,7 @@ We will need to plan, design, implement a solution for automating the developmen
     - Use configuration software to automate containerisation and deployment
     - Use Deployment software to develop a CI/CD pipeline including built, test and deploy stages
     - Use a Cloud provider
-<!-- 3. **Documentation:**
+3. **Documentation:**
     - Specification for the project
     - Project Planning and Initial Management
     - Risk Assessment
@@ -96,23 +101,24 @@ Part 2 Jenkins Pull code from GitHub
 
 ***
 ## **Terraform and Kubernetes**
- We will be using Terraform to set up networking, our Kubernetes cluster and our RDS database. This will only need to be done once. Once `terraform apply` had been executed and the cluster has successfully built with through kubernetes, all other updates can be handles by a Jenking/GitHub webhook.
+ We will be using Terraform to set up networking, our Kubernetes cluster and our RDS database. This will only need to be done once. Once `terraform apply` had been executed and the cluster has successfully built with through Kubernetes, all other updates can be handled by a Jenkins/GitHub webhook.
 
-First we created an IAM user that we will give policies and permissions to run our kubernetes.
+First, we created an IAM user that we will give policies and permissions to run our Kubernetes.
 ![IAM Users](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d32ec05c8a2623ce33ad029c56390e31/IAM_Users.png)
 
-Below you will find all the policies and permissiions we granted to our kubernetes user.
+Below you will find all the policies and permissions we granted to our Kubernetes user.
 ![IAM Policies](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d589c035a5ec44d036130527b41387ed/IAM_Policies_permissions.png)
 
-This user's credentials will enable us to automate everything in out terraform and kubernetes files and folders. All credentials and sensative information (secret keys, passwords etc)will be protected and hidden with variables.tf files.
+This user's credentials will enable us to automate everything in our Terraform and Kubernetes files and folders. All credentials and sensitive information (secret keys, passwords etc)will be protected and hidden with variables.tf files.
 
-With terraform we set up networking.
+With terraform, we set up networking.
 ![VPC](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/17e2ac118da3bfe3f7b062a04cad6d0c/VPC.png)
-
 And our Kubernetes Cluster.
 ![Cluster](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/1c03d6de132cb5f6d160b282ac763add/Clusters.png)
 Our cluster is made up of four EC2 instances.
-![EC2's]()
+![EC2's](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d726491d9c29ad5fb72d20d27938981b/Instances.png)
+Finally, our RDS Database is created.
+![RDS](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/59fb20b0718d1a45d8d79ba066b72c1d/RDS_Database.png
 
 ***
 ## **Jenkins**
