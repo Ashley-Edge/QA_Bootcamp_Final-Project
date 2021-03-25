@@ -18,11 +18,11 @@ spec:
         app: petclinic-demo
     spec:
       containers:
-      - image: springcommunity/spring-petclinic-rest
+      - image: codevid/backend
         name: petclinic-demo
         resources: {}
         ports:
-          - containerPort: 27017
+          - containerPort: 9966
 status: {}
 ---
 apiVersion: v1
