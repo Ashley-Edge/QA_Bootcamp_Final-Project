@@ -18,4 +18,8 @@ resource "aws_db_instance" "rds_instance" {
 
  # If needed, we can delete our RDS instance with Terraform.
   skip_final_snapshot = true 
+
+  tags = {
+    n = "foo"
+  }
 }
