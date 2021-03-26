@@ -14,7 +14,7 @@ mkdir temp_dir && cd temp_dir
 git clone https://github.com/Team-CodeVid/spring-petclinic-rest.git
 
 #Run our files on the mysql-client, create and populate the petclinic database
-mysql --host=$RDS_ENDPOINT --port=3306 --user=$RDS_USERNAME --password=$RDS_PASSWORD < Database/createdatabase.sql
+mysql --host=$RDS_ENDPOINT --port=3306 --user=$RDS_USERNAME --password=$RDS_PASSWORD < ./Jenkins/Scripts/Database/createdatabase.sql
 
 #Clean up (ideal for testing environment)
 cd .. && sudo rm -r temp_dir
