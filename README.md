@@ -83,10 +83,13 @@ Below is our initial CI/CD Pipeline, which we decided on at the beginning of the
 
 ![Our Pipeline](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/92623ad4d78d7356357b905b20e2a75a/CI_CD_Pipeline.png)
 
+Here is our final CI/CD Pipeline we made once we completed the project
+![Final CI/CD Pipeline](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/1aed1873d81969f1aaaba1106daba671/Final_CICD_pipeline.png)
+
 While we were learning about Kubernetes and how to use it, we discovered that it can take up to 20 min to initially start up a cluster. Below is our plan to cut down that time. Part 1 will be initialised once and part 2 will run through Jenkins via a GitHub webhook. We will talk more about each stage in depth further on in this document.
 
 Part 1 Terraform
-1. Set up IAM roles and policies (will do than on your AWS account directly)
+1. Set up IAM roles and policies (will do that on your AWS account directly)
 2. Set up networking
 3. Set up Kubernetes cluster
 4. Set up RDS
