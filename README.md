@@ -76,6 +76,10 @@ This is our initial risk assessment from the start of our project.
 
 ![initial_risk_assessment](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/3d495ce0c66ed7fa52472331fbdaea6d/Initial_risk_assesment.png)
 
+While working on this project we had time to reflect and experiance estra potential risks.
+
+![Final risks](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/cf014126a7e4c79b62a2780461d9dce4/Updated_risks.png)
+
 ***
 ## **CI/CD Pipeline**
 
