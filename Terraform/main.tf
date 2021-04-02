@@ -48,20 +48,6 @@ module "vpc" {
   }
 }
 
-resource "aws_vpc_peering_connection" "foo" {
-  peer_vpc_id   = "vpc-2544624d"
-  vpc_id        = module.vpc.vpc_id
-  auto_accept = true
-
-  accepter {
-    allow_remote_vpc_dns_resolution = true
-  }
-
-  requester {
-    allow_remote_vpc_dns_resolution = true
-  }
-}
-
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -127,44 +113,6 @@ resource "aws_security_group" "allow_web" {
     Name = "allow_web"
   }
 
-}
-
-module "alb" {
-  source  = "terraform-aws-modules/alb/aws"
-  version = "~> 5.0"
-
-  name = "my-alb"
-
-  load_balancer_type = "application"
-
-  vpc_id             = module.vpc.vpc_id
-  subnets            = module.vpc.public_subnets
-  security_groups    = [aws_security_group.allow_web.id]
-
-  #access_logs = {
-  #  bucket = "my-alb-logs"
-  #}
-
-  target_groups = [
-    {
-      name_prefix      = "pref-"
-      backend_protocol = "HTTP"
-      backend_port     = 80
-      target_type      = "instance"
-    }
-  ]
-
-  http_tcp_listeners = [
-    {
-      port               = 80
-      protocol           = "HTTP"
-      target_group_index = 0
-    }
-  ]
-
-  tags = {
-    Environment = "Production"
-  }
 }
 
 module "rds" {
