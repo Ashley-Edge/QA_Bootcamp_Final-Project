@@ -67,28 +67,28 @@ Planning is a large part of this project. We will be spending a large amount of 
 
 This is our initial Trello board after our first day in the project. As you can see we have created quite a few tasks to do and have assigned them to members through tags.
 
-![Initial Trello Board](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/aa78bcb586afb161fdf2ae47b8ea3a82/Initial_Trello_Board.png)
+![Initial Trello Board](/Images/Initial%20Trello%20Board.png)
 
 ***
 ## **Risk assessment**
 
 This is our initial risk assessment from the start of our project.
 
-![initial_risk_assessment](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/3d495ce0c66ed7fa52472331fbdaea6d/Initial_risk_assesment.png)
+![initial_risk_assessment](/Images/Initial%20risk%20assesment.png)
 
 While working on this project we had time to reflect and experiance estra potential risks.
 
-![Final risks](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/cf014126a7e4c79b62a2780461d9dce4/Updated_risks.png)
+![Final risks](/Images/Updated%20risks.png)
 
 ***
 ## **CI/CD Pipeline**
 
 Below is our initial CI/CD Pipeline, which we decided on at the beginning of the project.
 
-![Our Pipeline](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/92623ad4d78d7356357b905b20e2a75a/CI_CD_Pipeline.png)
+![Our Pipeline](/Images/CI%20CD%20Pipeline.png)
 
 Here is our final CI/CD Pipeline we made once we completed the project
-![Final CI/CD Pipeline](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/1aed1873d81969f1aaaba1106daba671/Final_CICD_pipeline.png)
+![Final CI/CD Pipeline](/Images/Final%20CICD%20pipeline.png)
 
 While we were learning about Kubernetes and how to use it, we discovered that it can take up to 20 min to initially start up a cluster. Below is our plan to cut down that time. Part 1 will be initialised once and part 2 will run through Jenkins via a GitHub webhook. We will talk more about each stage in depth further on in this document.
 
@@ -111,29 +111,29 @@ Part 2 Jenkins Pull code from GitHub
 
 First, we created an IAM user that we will give policies and permissions to run our Kubernetes.
 
-![IAM Users](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d32ec05c8a2623ce33ad029c56390e31/IAM_Users.png)
+![IAM Users](/Images/IAM%20Users.png)
 
 Below you will find all the policies and permissions we granted to our Kubernetes user.
 
-![IAM Policies](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d589c035a5ec44d036130527b41387ed/IAM_Policies_permissions.png)
+![IAM Policies](/Images/IAM%20Policies%20permissions.png)
 
 This user's credentials will enable us to automate everything in our Terraform and Kubernetes files and folders. All credentials and sensitive information (secret keys, passwords etc)will be protected and hidden with variables.tf files.
 
 With terraform, we set up networking.
 
-![VPC](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/17e2ac118da3bfe3f7b062a04cad6d0c/VPC.png)
+![VPC](/Images/VPC.png)
 
 And our Kubernetes Cluster.
 
-![Cluster](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/1c03d6de132cb5f6d160b282ac763add/Clusters.png)
+![Cluster](/Images/Clusters.png)
 
 Our cluster is made up of four EC2 instances.
 
-![EC2's](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/d726491d9c29ad5fb72d20d27938981b/Instances.png)
+![EC2's](/Images/Instances.png)
 
 Finally, our RDS Database is created.
 
-![RDS](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/59fb20b0718d1a45d8d79ba066b72c1d/RDS_Database.png)
+![RDS](/Images/RDS%20Database.png)
 
 ***
 ## **Jenkins**
@@ -142,7 +142,7 @@ We will use Jenkins to build our CI/CD pipeline, by pulling the code from this G
 
 As you can see below, we had successfully deployed our app after 11 builds. And looking further with the Jenkins console output, you can see we are an issue also free.
 
-![Jenkins pipeline and console](https://trello-attachments.s3.amazonaws.com/605757e19c8c9e860a20a456/605865ea41150d72499a922d/5c859459a33274a19817dc201aae5e4b/Jenkins.png)
+![Jenkins pipeline and console](/Images/Jenkins.png)
 
 We have five stages in our Jenkins pipeline: Checkout SCM, Setting up the database, testing, building images and deploy.
 
